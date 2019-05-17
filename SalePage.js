@@ -10,12 +10,12 @@ const data = Array.from(new Array(9)).map((_val, i) => ({
 const data1 = [{
     icon: '../saleMobile/img/customer.png',
     text: '客户',
-    id: 1
+    index: 1
 },
     {
     icon: '../saleMobile/img/remind.png',
     text: '提醒',
-    id: 2
+    index: 2
     }];
 //     {
 //     icon: 'http://119.23.77.187/img/remind.png',
@@ -50,17 +50,15 @@ class SalePage extends React.Component<any, any>{
                     {/*<Grid data={data} hasLine={false} />*/}
                 {/*</View>*/}
 
-                {/*<View style={[{ margin: 10 }]}>*/}
-                    {/*<Text> 销售首页</Text>*/}
-                {/*</View>*/}
-                {/*<Grid*/}
-                    {/*data={data1}*/}
-                    {/*columnNum={3}*/}
-                    {/*isCarousel*/}
-                    {/*onPress={(_el, index) => alert(index)}*/}
-                    {/*itemStyle={{ backgroundColor: '#1296db' }}*/}
-                    {/*/!*<Button>按钮</Button>*!/*/}
-                {/*/>*/}
+                <View style={[{ margin: 10 }]}>
+                    <Text onPress={()=>alert(123)}>Carousel</Text>
+                </View>
+                <Grid
+                    data={data}
+                    columnNum={3}
+                    isCarousel
+                    onPress={(_el: any, index: any) => alert(index)}
+                />
 
                 <View style={[{ margin: 10 }]}>
                     <Text>Custom GridCell Style</Text>
@@ -68,6 +66,7 @@ class SalePage extends React.Component<any, any>{
                 <Grid
                     data={data1}
                     columnNum={3}
+                    onPress={(_el: any, index: any) => alert(index)}
                     itemStyle={{ height: 150, backgroundColor: '#ffff00' }}
                 />
             </ScrollView>
