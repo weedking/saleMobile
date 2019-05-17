@@ -6,7 +6,23 @@
 
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet, Text, View, ScrollView} from 'react-native';
-import { Button, Icon, SearchBar, TabBar } from 'antd-mobile-rn';
+import { Button, Icon, SearchBar, TabBar, WhiteSpace } from 'antd-mobile-rn';
+
+import SalePage from './SalePage';
+
+const PlaceHolder = props => (
+    <View
+        style={{
+          backgroundColor: '#eee',
+          height: 30,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        {...props}
+    >
+      <Text style={{ color: '#bbb' }}>Block</Text>
+    </View>
+);
 
 export default class saleMobile extends Component<any, any> {
   constructor(props: any) {
@@ -18,7 +34,7 @@ export default class saleMobile extends Component<any, any> {
   renderContent(pageText: any) {
     return (
         <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
-          <SearchBar placeholder="Search" showCancelButton />
+          <SearchBar  placeholder="Search" showCancelButton />
           <Text style={{ margin: 50 }}>{pageText}</Text>
         </View>
     );
@@ -54,8 +70,11 @@ export default class saleMobile extends Component<any, any> {
               selected={this.state.selectedTab === 'greenTab'}
               onPress={() => this.onChangeTab('greenTab')}
           >
-            {this.renderContent('CRM')}
+            {/*{this.renderContent('CRM')}*/}
+              <SalePage />
+
           </TabBar.Item>
+
           <TabBar.Item
               icon={require('../saleMobile/img/me.png')}
               title="我"
@@ -65,7 +84,6 @@ export default class saleMobile extends Component<any, any> {
             {this.renderContent('我的')}
           </TabBar.Item>
         </TabBar>
-
     );
   }
 }
