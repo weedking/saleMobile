@@ -57,7 +57,8 @@ class SalePage extends React.Component<any, any>{
                     data={data}
                     columnNum={3}
                     isCarousel
-                    onPress={(_el: any, index: any) => alert(index)}
+                    // onPress={(_el: any, index: any) => alert(index)}
+                    onClick={() => alert(456)}
                 />
 
                 <View style={[{ margin: 10 }]}>
@@ -66,8 +67,8 @@ class SalePage extends React.Component<any, any>{
                 <Grid
                     data={data1}
                     columnNum={3}
-                    onPress={(_el: any, index: any) => alert(index)}
-                    itemStyle={{ height: 150, backgroundColor: '#ffff00' }}
+                    onClick={(_el: any, index: any) => alert(index)}
+                    // itemStyle={{ height: 150, backgroundColor: '#ffff00' }}
                 />
             </ScrollView>
         );
